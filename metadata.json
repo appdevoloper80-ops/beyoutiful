@@ -1,0 +1,8 @@
+{
+  "name": "Beyoutiful Boutique and Salon",
+  "description": "Premier women's fashion boutique and hair & beauty salon at 902 S MLK Jr Blvd, Americus, GA. Curated style, expert cuts, balayage, and beauty care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

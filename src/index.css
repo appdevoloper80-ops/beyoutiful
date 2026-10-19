@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --blush: #F6D6D8;
+    --rose: #D98C9B;
+    --rose-deep: #B4506A;
+    --plum: #3A1F2B;
+    --champagne: #C9A66B;
+    --cream: #FFF9F5;
+    --ink: #2A2025;
+    --white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Arch-Shaped Masks */
+.arch-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.arch-card {
+  border-radius: 120px 120px 24px 24px;
+}
+
+/* Soft Pink-Tinted Shadows */
+.shadow-blush {
+  box-shadow: 0 10px 30px -5px rgba(217, 140, 155, 0.2), 0 4px 12px -2px rgba(58, 31, 43, 0.05);
+}
+
+.shadow-blush-lg {
+  box-shadow: 0 20px 40px -10px rgba(217, 140, 155, 0.3), 0 8px 20px -4px rgba(58, 31, 43, 0.08);
+}
+
+.shadow-plum {
+  box-shadow: 0 20px 40px -15px rgba(58, 31, 43, 0.4);
+}
+
+/* Luxury button gradient */
+.btn-rose-gradient {
+  background: linear-gradient(135deg, #D98C9B 0%, #B4506A 100%);
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-rose-gradient:hover {
+  background: linear-gradient(135deg, #e29baa 0%, #9e3f56 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(180, 80, 106, 0.4);
+}
+
+.btn-rose-gradient:active {
+  transform: translateY(0);
+}
+
+/* Champagne border styling */
+.border-champagne {
+  border-color: rgba(201, 166, 107, 0.35);
+}
+
+.border-champagne-glow {
+  border-color: #C9A66B;
+  box-shadow: 0 0 15px rgba(201, 166, 107, 0.25);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating particles */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) rotate(45deg);
+    opacity: 0.6;
+  }
+}
+
+.particle-float {
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+/* Respect Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+  .particle-float {
+    animation: none !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
